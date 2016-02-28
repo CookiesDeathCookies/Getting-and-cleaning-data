@@ -61,7 +61,7 @@ read_data <- function() {
       all_observations <- cbind(all_observations, activity_type)
       # =================================================
       setwd("..")
-      write.table(all_observations, "all_observations.txt")
+      write.table(all_observations, "all_observations.txt", row.names = FALSE)
       # =================================================
       by_activity <- group_by(all_observations, activity_type, subject)
       observations_by_groups <- 
@@ -73,6 +73,6 @@ read_data <- function() {
             accelerator_Y_std = mean(tBodyAccStdY),
             accelerator_Z_std = mean(tBodyAccStdZ)
             )
-      write.table(observations_by_groups, "observations_by_groups.txt")
+      write.table(observations_by_groups, "observations_by_groups.txt", row.names = FALSE)
       # =================================================
 }
