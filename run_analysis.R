@@ -60,6 +60,7 @@ read_data <- function() {
       all_observations <- select(all_observations, -activity_type)
       all_observations <- cbind(all_observations, activity_type)
       # =================================================
+      setwd("..")
       write.table(all_observations, "all_observations.txt")
       # =================================================
       by_activity <- group_by(all_observations, activity_type, subject)
